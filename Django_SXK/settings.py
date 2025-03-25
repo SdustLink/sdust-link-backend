@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-^xz2ur@g4u8c=a2z3dfi=tvyt!3q_(-&bgs3sp_5&72_buwgp+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','0.0.0.0']
+ALLOWED_HOSTS = ['127.0.0.1','0.0.0.0','www.sxksxk.work']
 
 
 # Application definition
@@ -44,7 +44,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    # 'django.middleware.csrf.CsrfViewMiddleware',CSRF认证
+    # 'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -78,9 +78,9 @@ WSGI_APPLICATION = 'Django_SXK.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'db_sxk',
-        'USER':'root',
-        'PASSWORD':'123456',
+        'NAME': 'sxk',
+        'USER':'sxk',
+        'PASSWORD':'lu862055705',
         'HOST':'127.0.0.1',
         'PORT':'3306'
     }
@@ -117,12 +117,15 @@ USE_I18N = True
 
 USE_TZ = True
 
+CSRF_TRUSTED_ORIGINS = ['https://www.sxksxk.work']
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 # http://192.168.21.128:8000/static/icon/home_before.png
 # http://192.168.21.128:8000/static/ScheduleContents/LineFrame.png
-STATIC_URL = '/static/'
+
+STATIC_URL = '/static/' # 能够访问静态文件的URL路径
+STATIC_ROOT = '/www/server/pyporject_evn/sxk_django/static_collected/'
 
 
 STATICFILES_DIRS=(os.path.join(BASE_DIR,'static'),)

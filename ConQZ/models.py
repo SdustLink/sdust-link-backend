@@ -53,7 +53,8 @@ class DepartmentClass(models.Model):
     updated = models.DateTimeField(auto_now=True)
     deleted = models.DateTimeField(blank=True, null=True)
 # 定义post_delete信号接收器
-
+    def __str__(self):
+        return f"{self.departName} (ID: {self.id}, 创建者: {self.creatornum_id}, 邀请码: {self.invitecode}, 创建时间: {self.created}, 更新时间: {self.updated}, 删除时间: {self.deleted})"
 class LikesInfo(models.Model):
    Groupname=models.CharField('同好名称',max_length=30,default='')
    QQGroupNumber=models.CharField('同好群号',max_length=50,default='')
